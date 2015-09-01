@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myDialog.html</title>
+    <script type ="text/javascript">
+        function fnGetInfo(){
+            var sWindow = window.dialogArguments;
+            var oEnterName = document.getElementById("oEnterName");
+            sWindow.sUserName = oEnterName.value;
+            sWindow.fnUpdate();
+        }
+        function fnCancel(){
+            var sWindow = window.dialogArguments;
+            sWindow.sUserName = "you not input name";
+            sWindow.fnUpdate();
+        }
+    </script>
+</head>
+<body>
+<label for="oEnterName">input your name</label>
+<input id = "oEnterName"/><br /><br />
+<input value="application" type="button" onclick="javascript:fnGetInfo()"/>
+<input value="ok" type="button" onclick="javascript:fnGetInfo();window.close()"/>
+<input value="no" type="button" onclick="javascript:fnCancel();window.close()"/>
+</body>
+</html>

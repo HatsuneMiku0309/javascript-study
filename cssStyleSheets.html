@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        @import "myStyle.css";
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+     var oStyleSheet = document.styleSheets[0];
+     var oRule = oStyleSheet.cssRules;
+     alert(oRule[0].style.color);
+     */
+    /*
+     in IE8 down rule -> oStyleSheet.rules;
+     var rules = oStyleSheet.rules ? oStyleSheet.rules : oStyleSheet.cssRules;
+     */
+</script>
+<script type="text/javascript">
+    var oStyleSheet = document.styleSheets[0];
+    var oImport = oStyleSheet.ownerRule[0];
+    var oRule = oImport.cssRules[1];
+    alert(oRule.style.color);
+     /*
+     if @import css , use styleSheet.ownerRule
+     in IE8 down use styleSheet.imports;
+     var oImport = oStyleSheet.imports ? oStyleSheet.imports : oStyleSheet.ownerRule;
+     */
+</script>
+</body>
+</html>
